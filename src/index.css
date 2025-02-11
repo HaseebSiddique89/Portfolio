@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden
+           transition-all duration-300 ease-out
+           hover:shadow-primary/20 hover:-translate-y-1 hover:scale-[1.01]
+           dark:shadow-gray-900/50 dark:hover:shadow-primary/30;
+  }
+
+  .text-container {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6
+           transition-all duration-300 ease-out
+           hover:shadow-primary/20 hover:-translate-y-1 hover:scale-[1.01]
+           dark:shadow-gray-900/50 dark:hover:shadow-primary/30;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  .image-container {
+    @apply relative overflow-hidden rounded-t-lg;
+  }
+
+  .image-hover {
+    @apply w-full h-full object-cover transition-transform duration-300 group-hover:scale-105;
+  }
+
+  .moving-background {
+    @apply fixed inset-0 -z-20;
+    background: linear-gradient(
+      45deg,
+      rgba(79, 70, 229, 0.2) 0%,
+      rgba(236, 72, 153, 0.2) 33%,
+      rgba(79, 70, 229, 0.2) 66%,
+      rgba(236, 72, 153, 0.2) 100%
+    );
+    background-size: 300% 300%;
+    animation: gradientMove 15s ease infinite;
+  }
+
+  .moving-dots {
+    @apply fixed inset-0 -z-10;
+    background-image: 
+      radial-gradient(circle at center, rgba(79, 70, 229, 0.15) 1px, transparent 1px),
+      radial-gradient(circle at center, rgba(236, 72, 153, 0.15) 1px, transparent 1px);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+    animation: dotsFloat 20s linear infinite;
+  }
+
+  .geometric-shapes {
+    @apply fixed inset-0 -z-30 overflow-hidden;
+  }
+
+  .geometric-shapes::before,
+  .geometric-shapes::after {
+    content: '';
+    @apply absolute;
+    width: 40vmax;
+    height: 40vmax;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.2), transparent 60%);
+    animation: shapeFloat 25s infinite ease-in-out;
+  }
+
+  .geometric-shapes::after {
+    animation-delay: -12.5s;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.2), transparent 60%);
+  }
+
+  .animated-circles {
+    @apply fixed inset-0 -z-40;
+  }
+
+  .circle {
+    @apply absolute rounded-full mix-blend-multiply;
+    width: 35vmax;
+    height: 35vmax;
+    animation: circleMove 20s infinite cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .circle:nth-child(1) {
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.3), transparent 70%);
+    animation-delay: -5s;
+  }
+
+  .circle:nth-child(2) {
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.3), transparent 70%);
+    animation-delay: -10s;
+  }
+
+  .circle:nth-child(3) {
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.3), transparent 70%);
+    animation-delay: -15s;
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes dotsFloat {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-30px) rotate(2deg);
+  }
+}
+
+@keyframes shapeFloat {
+  0% {
+    transform: translate(10%, 10%) rotate(0deg);
+  }
+  25% {
+    transform: translate(60%, 30%) rotate(90deg);
+  }
+  50% {
+    transform: translate(30%, 60%) rotate(180deg);
+  }
+  75% {
+    transform: translate(-20%, 30%) rotate(270deg);
+  }
+  100% {
+    transform: translate(10%, 10%) rotate(360deg);
+  }
+}
+
+@keyframes circleMove {
+  0% {
+    transform: translate(0%, 0%) scale(1);
+    opacity: 0.8;
+  }
+  33% {
+    transform: translate(30%, 30%) scale(1.2);
+    opacity: 0.6;
+  }
+  66% {
+    transform: translate(-20%, 50%) scale(0.9);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(0%, 0%) scale(1);
+    opacity: 0.8;
+  }
+}
