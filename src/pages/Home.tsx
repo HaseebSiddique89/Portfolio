@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
 import { Github, Linkedin, Mail, FileText } from 'lucide-react';
+import profileImage from '../assets/profile.jpg';
 
 const socialLinks = [
   {
@@ -97,11 +98,11 @@ const Home = () => {
             whileHover={{ scale: 1.02 }}
           >
             <div className="aspect-square rounded-full overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300">
-              <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop&q=80"
-                alt="Profile"
-                className="w-full h-full object-cover transform transition-transform duration-300 hover:scale-105"
-              />
+            <img
+              src={profileImage}
+              alt="Profile"
+              className="w-full h-full object-cover transform transition-transform duration-300 hover:scale-105"
+            />
             </div>
             <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-full" />
           </motion.div>
