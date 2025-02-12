@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
 import { Github, Linkedin, Mail, FileText } from 'lucide-react';
-const profileImage = new URL('../assets/profile.jpg', import.meta.url).href;
+const profileImage = new URL('../public/profile.jpg', import.meta.url).href;
 
 const socialLinks = [
   {
