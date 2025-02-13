@@ -7,25 +7,25 @@ const profileImage = "\\Portfolio\\profile.jpg";
 const socialLinks = [
   {
     icon: <Github className="w-6 h-6" />,
-    href: 'https://github.com/yourusername',
+    href: 'https://github.com/haseebsiddique89',
     label: 'GitHub',
     color: 'hover:text-[#333]',
   },
   {
     icon: <Linkedin className="w-6 h-6" />,
-    href: 'https://linkedin.com/in/yourusername',
+    href: 'https://linkedin.com/in/haseeb-siddique-1b73b7229',
     label: 'LinkedIn',
     color: 'hover:text-[#0077b5]',
   },
   {
     icon: <Mail className="w-6 h-6" />,
-    href: 'mailto:your.email@example.com',
+    href: 'mailto:haseebsiddique825@gmail.com',
     label: 'Email',
     color: 'hover:text-[#EA4335]',
   },
   {
     icon: <FileText className="w-6 h-6" />,
-    href: '/cv.pdf',
+    href: '\\Portfolio\\Haseeb_Resume.pdf',
     label: 'CV',
     color: 'hover:text-primary',
   },
