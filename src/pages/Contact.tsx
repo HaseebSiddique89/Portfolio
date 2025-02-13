@@ -1,8 +1,30 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin, FileText, Instagram } from 'lucide-react';
 
 const Contact = () => {
+
+  const socialLinks = [
+    {
+      icon: <Github className="w-6 h-6" />,
+      href: 'https://github.com/haseebsiddique89',
+      label: 'GitHub',
+      color: 'hover:text-[#333]',
+    },
+    {
+      icon: <Linkedin className="w-6 h-6" />,
+      href: 'https://linkedin.com/in/haseeb-siddique-1b73b7229',
+      label: 'LinkedIn',
+      color: 'hover:text-[#0077b5]',
+    },
+    {
+      icon: <Instagram className="w-6 h-6" />,
+      href: 'https://instagram.com/haseebsiddique_',
+      label: 'Instagram',
+      color: 'hover:text-[#E4405F]',
+    },
+  ];
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -31,30 +53,35 @@ const Contact = () => {
               <div className="space-y-4">
                 <div className="flex items-center">
                   <Mail className="w-6 h-6 text-primary mr-3" />
-                  <span>john.doe@example.com</span>
+                  <span>haseebsiddique825@gmail.com</span>
                 </div>
                 <div className="flex items-center">
                   <Phone className="w-6 h-6 text-primary mr-3" />
-                  <span>+1 (555) 123-4567</span>
+                  <span>+92 317 4391996</span>
                 </div>
                 <div className="flex items-center">
                   <MapPin className="w-6 h-6 text-primary mr-3" />
-                  <span>San Francisco, CA</span>
+                  <span>Lahore, Punjab</span>
                 </div>
               </div>
 
               <div className="mt-8">
                 <h3 className="text-lg font-semibold mb-4">Social Media</h3>
-                <div className="flex space-x-4">
-                  <a href="#" className="p-2 bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-primary hover:text-white transition-colors">
-                    <Github className="w-6 h-6" />
-                  </a>
-                  <a href="#" className="p-2 bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-primary hover:text-white transition-colors">
-                    <Linkedin className="w-6 h-6" />
-                  </a>
-                  <a href="#" className="p-2 bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-primary hover:text-white transition-colors">
-                    <Twitter className="w-6 h-6" />
-                  </a>
+                <div className="flex space-x-6">
+                  {socialLinks.map((link) => (
+                    <motion.a
+                      key={link.label}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                      className={`p-3 rounded-full bg-gray-100 dark:bg-gray-800 ${link.color} transform transition-all duration-300 hover:shadow-lg`}
+                      title={link.label}
+                    >
+                      {link.icon}
+                    </motion.a>
+                  ))}
                 </div>
               </div>
             </div>

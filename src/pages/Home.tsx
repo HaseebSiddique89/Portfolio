@@ -28,6 +28,7 @@ const socialLinks = [
     href: '\\Portfolio\\Haseeb_Resume.pdf',
     label: 'CV',
     color: 'hover:text-primary',
+    download: true,
   },
 ];
 

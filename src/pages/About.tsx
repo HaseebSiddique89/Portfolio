@@ -44,7 +44,7 @@ const About = () => {
           </h1>
           <div className="text-container mb-12">
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              I'm a passionate AI Developer and Researcher with 5+ years of experience in building
+              I'm a passionate AI Developer and Researcher with 3+ years of experience in building
               cutting-edge AI solutions. My expertise spans across machine learning, natural language
               processing, and full-stack development. I'm particularly interested in developing
               AI systems that can make a positive impact on society.
